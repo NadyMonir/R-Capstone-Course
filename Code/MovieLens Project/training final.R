@@ -138,7 +138,7 @@ test_reco  <-  with(residual_test, data_memory(user_index = userId,
 # Create the model object
 model <-  recosystem::Reco()
 
-# tune the model using the common usage of the method from help file
+# tune the model using the common usage of the method from help file (this will take several minutes)
 model$tune(train_reco, opts = list(dim      = c(10L, 20L),
                                costp_l1 = c(0, 0.1),
                                costp_l2 = c(0.01, 0.1),
@@ -147,7 +147,7 @@ model$tune(train_reco, opts = list(dim      = c(10L, 20L),
                                lrate    = c(0.01, 0.1),
                                nthread = 4, niter = 20))
 
-# training the model (this will take several minutes)
+# training the model 
 model$train(train_reco, opts = c( nthread = 4, niter = 20))
 # extract of prediction on the residual
 residual_prediction <-  model$predict(test_reco, out_memory())
@@ -164,7 +164,7 @@ rmse
 ########################
 
 # we will go ahead and use the last model as our model of choice
-# so we will train the model on all the edx set and then predict the model on validation set tp get the final RMSE value
+# so we will train the model on all the edx set and then predict the model on validation set to get the final RMSE value
 
 # the new average (on edx)
 mu<-mean(edx$rating)
@@ -190,7 +190,7 @@ test_reco  <-  with(residual_test, data_memory(user_index = userId,
 
 # Create the model object
 model <-  recosystem::Reco()
-# tune the model using the common usage of the method
+# tune the model using the common usage of the method (this will take several minutes)
 model$tune(train_reco, opts = list(dim      = c(10L, 20L),
                                    costp_l1 = c(0, 0.1),
                                    costp_l2 = c(0.01, 0.1),
@@ -200,7 +200,7 @@ model$tune(train_reco, opts = list(dim      = c(10L, 20L),
                                    nthread = 4, niter = 20))
 
 
-# training the model (this will take several minutes)
+# training the model 
 model$train(train_reco, opts = c( nthread = 4, niter = 20))
 # extract of prediction on the residual
 residual_prediction <-  model$predict(test_reco, out_memory())

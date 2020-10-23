@@ -303,6 +303,6 @@ rmse %>% knitr::kable()
 
 ## Conclusion
 
-We started with a very simple model which is just the mean of the observed ratings. From there, we added movie and user effects, that models the user behavior and movie distribution. With regularization we added a penalty value for the movies and users with few number of ratings. The model achieved the RMSE of 0.88, and it simulate a linear regression model (ratings ~ user + movie)
+We started with a very simple model which is just the mean of the observed ratings. From there, we added movie and user effects, then With regularization we added a penalty value for the movies and users with few number of ratings. The model achieved the RMSE of `r rmse[4,2]`, and it simulate a linear regression model (ratings ~ user + movie)
 
-Finally, we evaluated the recosystem package that implements the Matrix Factorization algorithm, and achieved the RMSE of 0.833.
+Finally, we used the recosystem package that implements the Matrix Factorization algorithm, and achieved the RMSE of `r rmse[6,2]` on `validation` dataset
