@@ -306,3 +306,10 @@ rmse %>% knitr::kable()
 We started with a very simple model which is just the mean of the observed ratings. From there, we added movie and user effects, then With regularization we added a penalty value for the movies and users with few number of ratings. The model achieved the RMSE of `r rmse[4,2]`, and it simulate a linear regression model (ratings ~ user + movie)
 
 Finally, we used the recosystem package that implements the Matrix Factorization algorithm, and achieved the RMSE of `r rmse[6,2]` on `validation` dataset
+
+### Limitations & Future Work
+
+While we still didn't take into account the dates of the ratings and the genres of the movies, the issue year of the movies, we may be able to better predict the ratings,
+Also the users data (which isn't included here at all), for example his country, may also have some effect on the ratings as well.
+
+The challenge is with the increasing every minute, it is harder / more expensive to compute complex models.
